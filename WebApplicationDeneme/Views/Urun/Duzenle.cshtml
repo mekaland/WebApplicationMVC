@@ -1,0 +1,31 @@
+﻿@model WebApplicationDeneme.Models.Urun
+@{
+    ViewData["Title"] = "Duzenle";
+}
+@* Ürün Düzenleme (Tag Helper ile) *@
+<h1>Duzenle</h1>
+
+<form asp-action="Duzenle" asp-controller="Urun" method="post">
+    <input type="hidden" asp-for="UrunId" />
+
+    <div>
+        <label asp-for="UrunAd"></label>
+        <input asp-for="UrunAd" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Kategori"></label>
+        <input asp-for="Kategori" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Fiyat"></label>
+        <input asp-for="Fiyat" class="form-control" />
+    </div>
+
+    <div>
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>
+
+

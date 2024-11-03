@@ -1,0 +1,35 @@
+﻿@model List<WebApplicationDeneme.Models.Urun>
+
+<h1>Ürün listesi</h1>
+<a asp-controller="Urun" asp-action="Ekle" >Yeni ürün ekle </a> <br />
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table border="1" width="600">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ürün Adı</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>@item.UrunId</td>
+               <td>@item.UrunAd</td>
+               <td>@item.Kategori</td>
+               <td>@item.Fiyat</td>
+                <td>
+                    <a asp-controller="Urun" asp-action="Düzenle" asp-route-id="@item.UrunId">Düzenle</a>
+                    <a asp-controller="Urun" asp-action="Sil" asp-route-id="@item.UrunId"> Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

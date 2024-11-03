@@ -1,0 +1,25 @@
+﻿@model WebApplicationDeneme.Models.Urun
+@* Ürün Ekleme (HTML Helper ile) *@
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+<h1>Yeni Ürün Ekle</h1>
+
+@using (Html.BeginForm("Ekle", "Urun", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.UrunAd)
+        @Html.TextBoxFor(m => m.UrunAd, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Kategori)
+        @Html.TextBoxFor(m => m.Kategori, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Fiyat)
+        @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control", type = "number" })
+    </div>
+    <button type="submit">Ekle</button>
+}
+

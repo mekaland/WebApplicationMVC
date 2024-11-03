@@ -1,0 +1,12 @@
+﻿@model WebApplicationDeneme.Models.Urun
+@{
+    ViewData["Title"] = "Sil";
+}
+@* Ürün Silme (URL Helper ile) *@
+<h1>Sil</h1>
+<p>@Url.Action("Sil","Urun",new {id = Model.UrunId})</p>
+
+<form method="post" action="@Url.Action("Sil", "Urun" , new  {id = Model.UrunId})">
+    <h3>@Model.UrunAd Adlı ürünü silmek üzeresiniz. Emin misiniz?</h3>
+    <input type="submit" value="sil" class="btn btn-danger" />
+</form>
